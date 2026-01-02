@@ -21,11 +21,18 @@ import { getPublicationList } from '~/assets/content/publications';
     <UPageCard
       v-for="(item, index) in publications"
       :key="item.id"
-      class="mb-4 min-[900px]:hover:bg-secondary-50" 
+      class="relative mb-4 min-[900px]:hover:bg-secondary-50" 
       variant="subtle"
-      :title="item.title"
       :description="item.description"
     >
+		<template #title>
+			{{ item.title }}
+			<UBadge 
+				:label="item.category"
+				class="absolute right-1 top-1"
+				color="secondary"
+			/>
+		</template>
 		<template #footer>
 			<UButton
 				download

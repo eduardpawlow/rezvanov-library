@@ -15,4 +15,7 @@ export default defineNuxtConfig({
       crawlLinks: true
     }
   },
+	ui: {
+		colorMode: false,
+	}
 })
